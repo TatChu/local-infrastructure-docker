@@ -22,3 +22,12 @@ services:
     environment:
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:-Pass@word}
       ACCEPT_EULA: "Y"
+  ravendb:
+    image: ravendb/ravendb
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data/RavenDB/config:/opt/RavenDB/config
+      - ./data/RavenDB/RavenData:/opt/RavenDB/Server/RavenData
+    environment:
+      RAVEN_ARGS: --Setup.Mode=None --Security.UnsecuredAccessAllowed=PublicNetwork --License.Eula.Accepted=true

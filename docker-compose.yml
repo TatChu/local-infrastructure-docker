@@ -15,6 +15,7 @@ services:
     restart: unless-stopped
   mssql:
     image: "mcr.microsoft.com/mssql/server"
+    container_name: mssql_container
     ports:
       - "1433:1433"
     volumes:
@@ -24,10 +25,8 @@ services:
       ACCEPT_EULA: "Y"
   ravendb:
     image: ravendb/ravendb
+    container_name: ravendb_container
     ports:
       - "8080:8080"
-    volumes:
-      - ./data/RavenDB/config:/opt/RavenDB/config
-      - ./data/RavenDB/RavenData:/opt/RavenDB/Server/RavenData
     environment:
       RAVEN_ARGS: --Setup.Mode=None --Security.UnsecuredAccessAllowed=PublicNetwork --License.Eula.Accepted=true

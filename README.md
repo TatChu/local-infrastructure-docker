@@ -39,3 +39,10 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 | Variable name      | Default value |
 | ------------------ | ------------- |
 | MSSQL_SA_PASSWORD  | ``Pass@word``  |
+
+3. Redis
+
+| Variable name             | Default value             |
+| ------------------------- | ------------------------- |
+| ALLOW_EMPTY_PASSWORD      | ``yes``                   |
+| REDIS_DISABLE_COMMANDS    | ``FLUSHDB,FLUSHALL``      |

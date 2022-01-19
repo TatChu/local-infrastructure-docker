@@ -32,7 +32,7 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 | ------------------ | ------------- |
 | POSTGRES_DB        | ``postgres``  |
 | POSTGRES_USER      | ``postgres``  |
-| POSTGRES_PASSWORD  | ``postgres``  |
+| POSTGRES_PASSWORD  | ``password1``  |
 
 2. Microsoft SQL Server
 

@@ -21,6 +21,8 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 ## Available infrastructure
 - Postgres (postgres/postgres)
 - MSSQL (sa/Pass@word)
+- Mysql (root/Pass@word)
+- Mailhog
 
 ... and waiting for your contribute.
 
@@ -46,3 +48,9 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 | ------------------------- | ------------------------- |
 | ALLOW_EMPTY_PASSWORD      | ``yes``                   |
 | REDIS_DISABLE_COMMANDS    | ``FLUSHDB,FLUSHALL``      |
+
+4. Mysql
+
+| Variable name      | Default value |
+| ------------------ | ------------- |
+| MYSQL_ROOT_PASSWORD  | ``Pass@word``  |

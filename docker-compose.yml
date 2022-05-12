@@ -42,8 +42,8 @@ services:
       - SYS_NICE
     restart: always
     environment:
-      - MYSQL_DATABASE=sample
-      - MYSQL_ROOT_PASSWORD=Pass@word
+      MYSQL_DATABASE: "sample"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-Pass@word}
     ports:
       - '3306:3306'
   ravendb:

@@ -20,14 +20,20 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 
 ## Available infrastructure
 - Postgres (postgres/postgres)
+- Redis
 - MSSQL (sa/Pass@word)
+- Mysql (root/Pass@word)
+- Mailhog
 
 ... and waiting for your contribute.
 
 ### Available environment variables
 
 1. Postgres
- 
+ - Ports
+   + Default: 5432
+
+
 | Variable name      | Default value |
 | ------------------ | ------------- |
 | POSTGRES_DB        | ``postgres``  |
@@ -35,14 +41,31 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 | POSTGRES_PASSWORD  | ``password1``  |
 
 2. Microsoft SQL Server
+- Ports
+  + Default: 1433
 
 | Variable name      | Default value |
 | ------------------ | ------------- |
 | MSSQL_SA_PASSWORD  | ``Pass@word``  |
 
 3. Redis
+- Ports
+  + Default: 6379
 
 | Variable name             | Default value             |
 | ------------------------- | ------------------------- |
 | ALLOW_EMPTY_PASSWORD      | ``yes``                   |
 | REDIS_DISABLE_COMMANDS    | ``FLUSHDB,FLUSHALL``      |
+
+4. Mysql
+- Ports
+  + DB Server: 3306
+
+| Variable name      | Default value |
+| ------------------ | ------------- |
+| MYSQL_ROOT_PASSWORD  | ``Pass@word``  |
+
+5. MailHog
+- Ports
+  + Web UI: 8025
+  + SMTP: 465

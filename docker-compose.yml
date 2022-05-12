@@ -35,6 +35,17 @@ services:
     environment:
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:-Pass@word}
       ACCEPT_EULA: "Y"
+  mysql:
+    container_name: mysql_container
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      MYSQL_DATABASE: "sample"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-Pass@word}
+    ports:
+      - '3306:3306'
   ravendb:
     image: ravendb/ravendb
     container_name: ravendb_container

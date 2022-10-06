@@ -59,6 +59,8 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 | REDIS_DISABLE_COMMANDS    | ``FLUSHDB,FLUSHALL``      |
 
 4. Mysql
+
+- Default account: root/Pass@word
 - Ports
   + DB Server: 3306
   + Adminer: 8080
@@ -74,8 +76,9 @@ Create a `.env` in the root folder and override your custom value. See [availabl
   + Web UI: 8025
   + SMTP: 465
 
-1. RabitMq
+6. RabbitMq
 
+- Account: guest/guest
 - Ports
   + Server: 5672
   + Management tool: 15672

@@ -46,6 +46,12 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-Pass@word}
     ports:
       - '3306:3306'
+  mysql-adminer:
+    image: adminer
+    container_name: mysql_adminer_container
+    restart: always
+    ports:
+      - 8080:8080
   ravendb:
     image: ravendb/ravendb
     container_name: ravendb_container

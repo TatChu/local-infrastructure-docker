@@ -19,11 +19,12 @@ To start specific services relevant to your tech stack:
 Create a `.env` in the root folder and override your custom value. See [available variables below](#available-environment-variables).
 
 ## Available infrastructure
-- Postgres (postgres/postgres)
-- Redis
-- MSSQL (sa/Pass@word)
-- Mysql (root/Pass@word)
-- Mailhog
+
+- Postgres (postgres/postgres)      | `docker-compose up -d postgres-plv8`
+- Redis                             | `docker-compose up -d redis`
+- MSSQL (sa/Pass@word)              | `docker-compose up -d mssql`
+- Mysql (root/Pass@word) | Adminer  | `docker-compose up -d mysql mysql-adminer`
+- Mailhog                           | `docker-compose up -d mailhog`
 
 ... and waiting for your contribute.
 

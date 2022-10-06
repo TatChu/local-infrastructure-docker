@@ -25,6 +25,7 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 - MSSQL (sa/Pass@word)              | `docker-compose up -d mssql`
 - Mysql (root/Pass@word) | Adminer  | `docker-compose up -d mysql mysql-adminer`
 - Mailhog                           | `docker-compose up -d mailhog`
+- RabbitMq                          | `docker-compose up -d rabbitmq rabbitmq_management`
 
 ... and waiting for your contribute.
 
@@ -33,7 +34,6 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 1. Postgres
  - Ports
    + Default: 5432
-
 
 | Variable name      | Default value |
 | ------------------ | ------------- |
@@ -61,12 +61,21 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 4. Mysql
 - Ports
   + DB Server: 3306
+  + Adminer: 8080
 
 | Variable name      | Default value |
 | ------------------ | ------------- |
 | MYSQL_ROOT_PASSWORD  | ``Pass@word``  |
 
 5. MailHog
+
 - Ports
+  
   + Web UI: 8025
   + SMTP: 465
+
+1. RabitMq
+
+- Ports
+  + Server: 5672
+  + Management tool: 15672

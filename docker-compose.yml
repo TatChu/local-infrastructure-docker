@@ -61,6 +61,7 @@ services:
       RAVEN_ARGS: --Setup.Mode=None --Security.UnsecuredAccessAllowed=PublicNetwork --License.Eula.Accepted=true
   redis:
     image: bitnami/redis:latest
+    container_name: redis_container
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended for development.
       - ALLOW_EMPTY_PASSWORD=${ALLOW_EMPTY_PASSWORD:-yes}
@@ -76,3 +77,13 @@ services:
     ports:
       - 8025:8025 # web ui
       - 465:1025 # smtp server
+  rabbitmq:
+    image: rabbitmq
+    container_name: rabbitmq_container
+    ports:
+      - 5672:5672
+  rabbitmq_management:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_management_container
+    ports:
+      - 15672:15672

@@ -19,38 +19,46 @@ To start specific services relevant to your tech stack:
 Create a `.env` in the root folder and override your custom value. See [available variables below](#available-environment-variables).
 
 ## Available infrastructure
+
 - Postgres (postgres/postgres)
 - MSSQL (sa/Pass@word)
 - Mysql (root/Pass@word)
 - Mailhog
+- MongoDB (root/Pass@word)
 
 ... and waiting for your contribute.
 
 ### Available environment variables
 
 1. Postgres
- 
-| Variable name      | Default value |
-| ------------------ | ------------- |
-| POSTGRES_DB        | ``postgres``  |
-| POSTGRES_USER      | ``postgres``  |
-| POSTGRES_PASSWORD  | ``password1``  |
+
+| Variable name     | Default value |
+| ----------------- | ------------- |
+| POSTGRES_DB       | `postgres`    |
+| POSTGRES_USER     | `postgres`    |
+| POSTGRES_PASSWORD | `password1`   |
 
 2. Microsoft SQL Server
 
-| Variable name      | Default value |
-| ------------------ | ------------- |
-| MSSQL_SA_PASSWORD  | ``Pass@word``  |
+| Variable name     | Default value |
+| ----------------- | ------------- |
+| MSSQL_SA_PASSWORD | `Pass@word`   |
 
 3. Redis
 
-| Variable name             | Default value             |
-| ------------------------- | ------------------------- |
-| ALLOW_EMPTY_PASSWORD      | ``yes``                   |
-| REDIS_DISABLE_COMMANDS    | ``FLUSHDB,FLUSHALL``      |
+| Variable name          | Default value      |
+| ---------------------- | ------------------ |
+| ALLOW_EMPTY_PASSWORD   | `yes`              |
+| REDIS_DISABLE_COMMANDS | `FLUSHDB,FLUSHALL` |
 
 4. Mysql
 
-| Variable name      | Default value |
-| ------------------ | ------------- |
-| MYSQL_ROOT_PASSWORD  | ``Pass@word``  |
+| Variable name       | Default value |
+| ------------------- | ------------- |
+| MYSQL_ROOT_PASSWORD | `Pass@word`   |
+
+5. MongoDB
+
+| Variable name       | Default value |
+| ------------------- | ------------- |
+| MONGO_ROOT_PASSWORD | `Pass@word`   |

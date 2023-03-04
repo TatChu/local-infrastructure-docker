@@ -77,6 +77,16 @@ services:
     ports:
       - 8025:8025 # web ui
       - 465:1025 # smtp server
+  mongodb:
+    image: mongo:6.0.4
+    environment:
+      MONGO_INITDB_DATABASE: sample
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-Pass@word}
+    volumes:
+      - ./data/mongo:/data/db
+    ports:
+      - "27017:27017"
   rabbitmq:
     image: rabbitmq
     container_name: rabbitmq_container

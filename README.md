@@ -20,65 +20,74 @@ Create a `.env` in the root folder and override your custom value. See [availabl
 
 ## Available infrastructure
 
-- Postgres (postgres/postgres)      | `docker-compose up -d postgres-plv8`
-- Redis                             | `docker-compose up -d redis`
-- MSSQL (sa/Pass@word)              | `docker-compose up -d mssql`
-- Mysql (root/Pass@word) | Adminer  | `docker-compose up -d mysql mysql-adminer`
-- Mailhog                           | `docker-compose up -d mailhog`
-- RabbitMq                          | `docker-compose up -d rabbitmq rabbitmq_management`
-
-... and waiting for your contribute.
+- MongoDB (root/Pass@word)| `docker-compose up -d mongodb`
+- Postgres (postgres/postgres) | `docker-compose up -d postgres-plv8`
+- Redis | `docker-compose up -d redis`
+- MSSQL (sa/Pass@word) | `docker-compose up -d mssql`
+- Mysql (root/Pass@word) | Adminer | `docker-compose up -d mysql mysql-adminer`
+- Mailhog | `docker-compose up -d mailhog`
+- RabbitMq | `docker-compose up -d rabbitmq rabbitmq_management`
+  ... and waiting for your contribute.
 
 ### Available environment variables
 
 1. Postgres
- - Ports
-   + Default: 5432
 
-| Variable name      | Default value |
-| ------------------ | ------------- |
-| POSTGRES_DB        | ``postgres``  |
-| POSTGRES_USER      | ``postgres``  |
-| POSTGRES_PASSWORD  | ``password1``  |
+- Ports
+  - Default: 5432
+
+| Variable name     | Default value |
+| ----------------- | ------------- |
+| POSTGRES_DB       | `postgres`    |
+| POSTGRES_USER     | `postgres`    |
+| POSTGRES_PASSWORD | `password1`   |
 
 2. Microsoft SQL Server
-- Ports
-  + Default: 1433
 
-| Variable name      | Default value |
-| ------------------ | ------------- |
-| MSSQL_SA_PASSWORD  | ``Pass@word``  |
+- Ports
+  - Default: 1433
+
+| Variable name     | Default value |
+| ----------------- | ------------- |
+| MSSQL_SA_PASSWORD | `Pass@word`   |
 
 3. Redis
+
 - Ports
-  + Default: 6379
+  - Default: 6379
 
-| Variable name             | Default value             |
-| ------------------------- | ------------------------- |
-| ALLOW_EMPTY_PASSWORD      | ``yes``                   |
-| REDIS_DISABLE_COMMANDS    | ``FLUSHDB,FLUSHALL``      |
+| Variable name          | Default value      |
+| ---------------------- | ------------------ |
+| ALLOW_EMPTY_PASSWORD   | `yes`              |
+| REDIS_DISABLE_COMMANDS | `FLUSHDB,FLUSHALL` |
 
-4. Mysql
+4. Mysql / mysql-adminer
 
 - Default account: root/Pass@word
 - Ports
-  + DB Server: 3306
-  + Adminer: 8080
+  - DB Server: 3306
+  - Adminer: 8080
 
-| Variable name      | Default value |
-| ------------------ | ------------- |
-| MYSQL_ROOT_PASSWORD  | ``Pass@word``  |
+| Variable name       | Default value |
+| ------------------- | ------------- |
+| MYSQL_ROOT_PASSWORD | `Pass@word`   |
 
-5. MailHog
+5. MongoDB
+
+| Variable name       | Default value |
+| ------------------- | ------------- |
+| MONGO_ROOT_PASSWORD | `Pass@word`   |
+
+6. MailHog
 
 - Ports
-  
-  + Web UI: 8025
-  + SMTP: 465
 
-6. RabbitMq
+  - Web UI: 8025
+  - SMTP: 465
+
+7. RabbitMq
 
 - Account: guest/guest
 - Ports
-  + Server: 5672
-  + Management tool: 15672
+  - Server: 5672
+  - Management tool: 15672

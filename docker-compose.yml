@@ -77,6 +77,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-Pass@word}
     volumes:
-      - ./container-volumes/mongo:/data/db
+      - ./data/mongo:/data/db
     ports:
       - "27017:27017"

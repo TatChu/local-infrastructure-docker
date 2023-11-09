@@ -35,6 +35,7 @@ services:
     environment:
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:-Pass@word}
       ACCEPT_EULA: "Y"
+    restart: unless-stopped
   mysql:
     container_name: mysql_container
     image: mysql:8.0
@@ -70,6 +71,7 @@ services:
       - "6379:6379"
     volumes:
       - "./data/redis:/bitnami/redis/data"
+    restart: unless-stopped
   mailhog:
     image: mailhog/mailhog
     logging:

@@ -99,3 +99,9 @@ services:
     container_name: rabbitmq_management_container
     ports:
       - 15672:15672
+
+  hazelcast:
+    image: hazelcast/hazelcast:latest
+    container_name: hazelcast
+    ports:
+      - 5701:5701

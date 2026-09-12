@@ -25,6 +25,19 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+
+  postgresql:
+    image: bitnami/postgresql
+    container_name: postgresql_container
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-postgres}
+      - POSTGRESQL_USERNAME=${POSTGRES_USER:-postgres}
+      - POSTGRESQL_PASSWORD=${POSTGRES_PASSWORD:-password1}
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
   mssql:
     image: "mcr.microsoft.com/mssql/server"
     container_name: mssql_container
@@ -51,8 +64,14 @@ services:
     image: adminer
     container_name: mysql_adminer_container
     restart: always
+    environment:
+      PHP_MEMORY_LIMIT: 2G
+      PHP_UPLOAD_MAX_FILESIZE: 4G
+      PHP_POST_MAX_SIZE: 4G
     ports:
       - 8080:8080
+    command: ["php", "-d", "post_max_size=500M", "-d", "upload_max_filesize=500M", "-S", "0.0.0.0:8080", "-t", "/var/www/html"]
+
   ravendb:
     image: ravendb/ravendb
     container_name: ravendb_container
@@ -105,3 +124,13 @@ services:
     container_name: hazelcast
     ports:
       - 5701:5701
+
+  pgadmin4:
+    image: dpage/pgadmin4:latest
+    container_name: pgsql_management_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@localhost.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 5430
+    ports:
+      - 5430:5430
